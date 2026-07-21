@@ -12,3 +12,7 @@ platforms :windows, :jruby do
 end
 
 gem "wdm", "~> 0.2.0", :platforms => [:windows]
+
+gem "jekyll", "~> 4.3"
+gem "jekyll-sass-converter", "~> 2.2"
+gem "sassc", "~> 2.4"
