@@ -8,13 +8,14 @@
 }
 
 body {
-  background-color: #050505;
+  background-color: --main-bg;
+  background: linear-gradient(350deg,rgba(0, 0, 0, 1) 0%, rgba(31, 3, 87, 1) 96%);
   color: #33ff99;
   font-family: "Courier New", monospace;
 }
 
 #main-wrapper {
-  background-color: #050505;
+  background-color:  rgba(0, 0, 0, 0.5);
 }
 
 .card {
@@ -24,4 +25,8 @@ body {
 
 a {
   color: #00ffff;
+}
+
+#search {
+  display: none;
 }
