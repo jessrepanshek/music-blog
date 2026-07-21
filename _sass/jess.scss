@@ -1,4 +1,5 @@
 /* Retro terminal theme */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=VT323&display=swap');
 
 :root {
   --main-bg: #050505;
@@ -7,12 +8,37 @@
   --link-color: #00ffff;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,.015),
+      rgba(255,255,255,.015) 1px,
+      transparent 2px,
+      transparent 4px
+    );
+
+  opacity: .2;
+}
+
 body {
-  background-color: --main-bg;
+  background-color: #0b0b0b;
   background: linear-gradient(350deg,rgba(0, 0, 0, 1) 0%, rgba(31, 3, 87, 1) 96%);
-  color: #33ff99;
-  font-family: "Courier New", monospace;
+  color: #d8d8d8;
+  font-family: "IBM Plex Mono", monospace;
   text-shadow: 0 0 5px rgba(51, 255, 153, 0.4);
+}
+
+h1, h2, h3, h4, .site-title {
+  font-family: 'VT323', monospace;
+  color: #66ff99;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(102,255,153,.25);
 }
 
 #main-wrapper {
@@ -20,12 +46,19 @@ body {
 }
 
 #sidebar {
-    align-items: center !important;
+  align-items: center !important;
+  background: #111;
+  border-right: 1px solid #222;
 }
 
 .profile-wrapper {
     text-align: center;
     width: 100%;
+}
+
+#avatar img {
+  border: 2px solid #66ff99;
+  box-shadow: 0 0 20px rgba(102,255,153,.25);
 }
 
 .site-title,
@@ -45,12 +78,69 @@ body {
   background-color: #0a0f0d;
   border-color: #1a3328;
   box-shadow: 0 0 15px rgba(51, 255, 153, 0.35);
+  border-radius: 7px;
+}
+
+#post-list {
+  margin: 3% 0 3% 0;
 }
 
 a {
-  color: #00ffff;
+  color: #66ff99;
+  transition: all .2s ease;
 }
 
-#search, #search-cancel {
-  display: none;
+a:hover {
+  color: #a8ffc8;
+  text-shadow: 0 0 10px #66ff99;
+}
+
+/** Cards **/
+.post-preview,
+.card,
+.post-content > blockquote {
+  background: rgba(20,20,20,.75);
+  backdrop-filter: blur(4px);
+  border: 1px solid #222;
+  border-radius: 12px;
+}
+
+.post-preview {
+  transition: .25s;
+}
+
+.post-preview:hover {
+  border-color: #66ff99;
+  box-shadow: 0 0 20px rgba(102,255,153,.2);
+  transform: translateY(-2px);
+}
+
+/** Ratings **/
+/** <div class="rating">
+★★★★★
+</div> **/
+
+.rating {
+  color: #66ff99;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 6px rgba(102,255,153,.4);
+}
+
+/** Album covers **/
+.album-cover {
+  max-width: 320px;
+  border-radius: 10px;
+  border: 2px solid #222;
+  transition: .25s;
+}
+
+.album-cover:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(102,255,153,.25);
+}
+
+/** Hide items **/
+#search, #search-cancel, #topbar, .sidebar-bottom {
+  display: none!important;
 }
