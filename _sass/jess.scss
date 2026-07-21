@@ -1,0 +1,27 @@
+/* Retro terminal theme */
+
+:root {
+  --main-bg: #050505;
+  --main-text-color: #33ff99;
+  --text-muted-color: #66aa88;
+  --link-color: #00ffff;
+}
+
+body {
+  background-color: #050505;
+  color: #33ff99;
+  font-family: "Courier New", monospace;
+}
+
+#main-wrapper {
+  background-color: #050505;
+}
+
+.card {
+  background-color: #0a0f0d;
+  border-color: #1a3328;
+}
+
+a {
+  color: #00ffff;
+}
