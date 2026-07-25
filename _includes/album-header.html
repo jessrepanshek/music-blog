@@ -1,0 +1,31 @@
+{% if page.album-cover %}
+<div class="album-header">
+
+  <img
+    class="album-cover"
+    src="{{ page.album-cover | relative_url }}"
+    alt="{{ page.album }}">
+
+  <div class="album-info">
+
+    {% if page.artist %}
+    <h2>{{ page.artist }}</h2>
+    {% endif %}
+
+    {% if page.album %}
+    <p>{{ page.album }}</p>
+    {% endif %}
+
+    {% if page.rating %}
+    <div class="rating">
+      {% assign rating = page.rating | floor %}
+      {% for i in (1..rating) %}
+        ★
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </div>
+
+</div>
+{% endif %}

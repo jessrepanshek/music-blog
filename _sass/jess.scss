@@ -2,10 +2,77 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=VT323&display=swap');
 
 :root {
-  --main-bg: #050505;
-  --main-text-color: #33ff99;
-  --text-muted-color: #66aa88;
-  --link-color: #00ffff;
+  /* Typography */
+  --font-heading: "VT323", monospace;
+  --font-body: "IBM Plex Mono", monospace;
+
+  /* Base colors */
+
+  --color-bg: #0b0b0b;
+  --color-surface: rgba(18, 18, 24, 0.85);
+  --color-surface-alt: rgba(25, 25, 35, 0.75);
+
+  /** Accent palette **/
+
+  /* Deep Purple */
+  --color-primary: rgb(31, 3, 87);
+
+  /* Electric Purple */
+  --color-primary-light: rgb(70, 35, 170);
+
+  /* Bright Cyan */
+  --color-accent: rgb(56, 217, 255);
+
+  /* Soft Cyan */
+  --color-accent-soft: rgba(56, 217, 255, 0.20);
+
+  /* Neon Cyan Glow */
+  --color-accent-glow: rgba(56, 217, 255, 0.45);
+
+  /** Typography colors **/
+
+  --color-text: #dddddd;
+  --color-text-muted: #9fa7c3;
+
+  --color-link: var(--color-accent);
+
+  /* Ice Blue */
+  --color-link-hover: #9cefff;
+
+  /** Borders **/
+
+  /* Cyan Border */
+  --color-border: rgba(56, 217, 255, 0.18);
+
+  /* Cyan Hover Border */
+  --color-border-hover: rgba(56, 217, 255, 0.55);
+
+  /* Effects */
+  --color-primary-glow: rgba(31,3,87,.55);
+  --color-accent-background: rgba(56,217,255,.12);
+
+  --shadow-glow: 0 0 18px var(--color-accent-soft);
+  --shadow-glow-strong: 0 0 30px var(--color-accent-glow);
+
+   /* Spacing */
+  --space-sm: .5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  /* Animation */
+  --transition-fast: .2s ease;
+  --transition-normal: .25s ease;
+
+  /* Borders */
+  --border-width: 1px;
+  --border-radius-sm: 7px;
+  --border-radius: 12px;
+  --border-radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-card: 0 0 15px rgba(31,3,87,.45);
+  --shadow-card-hover: 0 0 30px rgba(56,217,255,.35);
 }
 
 body::before {
@@ -15,55 +82,64 @@ body::before {
   pointer-events: none;
 
   background:
-    repeating-linear-gradient(
-      to bottom,
-      rgba(255,255,255,.015),
-      rgba(255,255,255,.015) 1px,
-      transparent 2px,
-      transparent 4px
+    radial-gradient(
+      circle at top left,
+      var(--color-primary-glow),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      var(--color-accent-background),
+      transparent 38%
     );
 
-  opacity: .2;
+  z-index: -1;
 }
 
 body {
-  background-color: #0b0b0b;
-  background: linear-gradient(350deg,rgba(0, 0, 0, 1) 0%, rgba(31, 3, 87, 1) 96%);
-  color: #d8d8d8;
-  font-family: "IBM Plex Mono", monospace;
-  text-shadow: 0 0 5px rgba(51, 255, 153, 0.4);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
 }
 
-h1, h2, h3, h4, .site-title {
-  font-family: 'VT323', monospace;
-  color: #66ff99;
-  letter-spacing: 1px;
-  text-shadow: 0 0 8px rgba(102,255,153,.25);
+h1,
+.site-title,
+.album-title {
+  font-family: var(--font-heading);
+}
+
+h2,
+h3,
+h4 {
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+a {
+  color: var(--color-link);
+  transition: .2s;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-shadow: var(--shadow-glow);
 }
 
 #main-wrapper {
-  background-color:  rgba(0, 0, 0, 0.5);
+  background-color:  rgba(0, 0, 0, 0.15);
+}
+
+.nav {
+  justify-content: center;
+  --bs-nav-link-color: var(--color-accent)!important;
+  --bs-nav-link-hover-color: var(--color-link-hover)!important;
+  transition: 0.25s;
 }
 
 #sidebar {
   align-items: center !important;
-  background: #111;
-  border-right: 1px solid #222;
-}
-
-.profile-wrapper {
-    text-align: center;
-    width: 100%;
-}
-
-#avatar img {
-  border: 2px solid #66ff99;
-  box-shadow: 0 0 20px rgba(102,255,153,.25);
-}
-
-.site-title,
-.site-subtitle {
-    text-align: center;
+  background: rgba(12, 12, 18, .05);
+  border-right: 1px solid var(--color-border);
 }
 
 #sidebar nav {
@@ -74,35 +150,54 @@ h1, h2, h3, h4, .site-title {
     justify-content: flex-start;
 }
 
-.card-body {
-  background-color: #0a0f0d;
-  border-color: #1a3328;
-  box-shadow: 0 0 15px rgba(51, 255, 153, 0.35);
-  border-radius: 7px;
+.profile-wrapper {
+    text-align: center;
+    width: 100%;
+}
+
+#avatar img {
+  margin-top: 2%;
+  border: 5px double var(--color-accent);
+  box-shadow: var(--shadow-glow);
+  border-radius: 50%;
+}
+
+.site-title,
+.site-subtitle {
+    text-align: center;
+}
+
+.site-title {
+    color: var(--color-accent) !important;
+}
+
+.site-subtitle {
+    color: var(--color-text-muted);
 }
 
 #post-list {
   margin: 3% 0 3% 0;
 }
 
-a {
-  color: #66ff99;
-  transition: all .2s ease;
-}
-
-a:hover {
-  color: #a8ffc8;
-  text-shadow: 0 0 10px #66ff99;
-}
-
 /** Cards **/
+.card-body {
+  border-color: var(--color-border);
+  border-radius: var(--border-radius-sm);
+}
+
 .post-preview,
-.card,
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 25px var(--color-primary);
+  backdrop-filter: blur(8px);
+}
+
 .post-content > blockquote {
-  background: rgba(20,20,20,.75);
-  backdrop-filter: blur(4px);
-  border: 1px solid #222;
-  border-radius: 12px;
+  background: var(--color-surface-alt);
+  border-left: 3px solid var(--color-accent);
 }
 
 .post-preview {
@@ -110,9 +205,16 @@ a:hover {
 }
 
 .post-preview:hover {
-  border-color: #66ff99;
-  box-shadow: 0 0 20px rgba(102,255,153,.2);
-  transform: translateY(-2px);
+  border-color: var(--color-border-hover);
+  transform: translateY(-3px);
+}
+
+.card-wrapper > a{
+  border: 1px solid var(--color-accent);
+}
+
+.card-wrapper > a:hover {
+  border: 5px double var(--color-accent);
 }
 
 /** Ratings **/
@@ -121,26 +223,71 @@ a:hover {
 </div> **/
 
 .rating {
-  color: #66ff99;
+  color: var(--color-accent);
   font-size: 1.2rem;
   letter-spacing: 2px;
-  text-shadow: 0 0 6px rgba(102,255,153,.4);
+  text-shadow: var(--shadow-glow);
 }
 
 /** Album covers **/
+/* Album review header */
+
+.album-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
 .album-cover {
-  max-width: 320px;
-  border-radius: 10px;
-  border: 2px solid #222;
-  transition: .25s;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+
+  flex: 0 0 auto;
+
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-glow);
+
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .album-cover:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 30px rgba(102,255,153,.25);
+  transform: scale(1.03);
+  box-shadow: var(--shadow-glow-strong);
+}
+
+.album-info {
+  flex: 1;
 }
 
 /** Hide items **/
+.post-meta > span:nth-child(2) {
+  display: none;
+}
+
+.readtime {
+  display: none;
+}
+
+/* Hide Chirpy post header image, keep home page thumbnails */
+popup img-link preview-img {
+  display: none!important;
+}
+
 #search, #search-cancel, #topbar, .sidebar-bottom {
   display: none!important;
+}
+
+@media (max-width: 768px) {
+  .album-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .album-cover {
+    width: 220px;
+    height: 220px;
+  }
 }

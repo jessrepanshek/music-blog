@@ -5,6 +5,11 @@ date: 2026-07-20 12:00:00 -0700
 categories: [Reviews]
 tags: [indie, electronic]
 
+album-cover: /assets/img/albums/dead-astronauts_constellations.jpeg
+image:
+  path: /assets/img/albums/dead-astronauts_constellations.jpeg
+show_post_image: false
+
 artist: "The Artist"
 album: "The Album"
 released: 2026
@@ -12,7 +17,12 @@ released: 2026
 rating: 5
 
 description: This album totally rocks, and let me tell you why.
+toc: false
 ---
+
+<div class="rating">
+★★★★★
+</div>
 
 ## First impressions
 
