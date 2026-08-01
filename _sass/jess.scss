@@ -59,6 +59,7 @@
   --space-md: 1rem;
   --space-lg: 2rem;
   --space-xl: 3rem;
+  --spacing-card: 1.5rem;
 
   /* Animation */
   --transition-fast: .2s ease;
@@ -103,12 +104,12 @@ body {
 }
 
 h1,
+h2,
 .site-title,
 .album-title {
   font-family: var(--font-heading);
 }
 
-h2,
 h3,
 h4 {
   font-family: var(--font-body);
@@ -188,7 +189,7 @@ a:hover {
 .post-preview,
 .card {
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
+/**   border: 1px solid var(--color-border); **/
   border-radius: var(--border-radius);
   backdrop-filter: blur(8px);
   box-shadow: 0 0 25px var(--color-primary);
@@ -209,8 +210,12 @@ a:hover {
   transform: translateY(-3px);
 }
 
+.card-wrapper {
+  margin-bottom: var(--spacing-card);
+}
+
 .card-wrapper > a{
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--color-border);
 }
 
 .card-wrapper > a:hover {
@@ -262,8 +267,17 @@ a:hover {
   flex: 1;
 }
 
+.preview-img img {
+  width: 100%;
+  padding: 2%;
+}
+
 /** Hide items **/
 .post-meta > span:nth-child(2) {
+  display: none;
+}
+
+#back-to-top {
   display: none;
 }
 

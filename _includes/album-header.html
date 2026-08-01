@@ -17,12 +17,24 @@
     {% endif %}
 
     {% if page.rating %}
-    <div class="rating">
-      {% assign rating = page.rating | floor %}
-      {% for i in (1..rating) %}
-        ★
-      {% endfor %}
-    </div>
+      {% assign full_stars = page.rating | floor %}
+      {% assign has_half = page.rating | modulo: 1 %}
+      {% assign empty_stars = 5 | minus: full_stars %}
+
+      <div class="rating">
+        {% for i in (1..full_stars) %}
+          <i class="fa-solid fa-star"></i>
+        {% endfor %}
+
+        {% if has_half > 0 %}
+          <i class="fa-solid fa-star-half-stroke"></i>
+          {% assign empty_stars = empty_stars | minus: 1 %}
+        {% endif %}
+
+        {% for i in (1..empty_stars) %}
+          <i class="fa-regular fa-star"></i>
+        {% endfor %}
+      </div>
     {% endif %}
 
   </div>
