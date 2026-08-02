@@ -5,10 +5,8 @@ date: 2026-07-20 12:00:00 -0700
 categories: [Albums]
 tags: [electronic, synthwave, darkwave]
 
-album-cover: /assets/img/albums/Dead_Astronauts-Constellations.jpeg
-image:
-  path: /assets/img/albums/Dead_Astronauts-Constellations.jpeg
-show_post_image: false
+image: /assets/img/albums/Dead_Astronauts-Constellations.jpeg
+
 
 artist: "Dead Astronauts"
 album: "Constellations"

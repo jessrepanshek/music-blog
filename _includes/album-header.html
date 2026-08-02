@@ -1,32 +1,43 @@
-{% if page.album-cover %}
+{% assign cover = page.image %}
+
+{% if cover or page.youtube %}
 <div class="album-header">
 
-  <img
-    class="album-cover"
-    src="{{ page.album-cover | relative_url }}"
-    alt="{{ page.album }}">
+  {% if cover %}
+    <img
+      class="album-cover"
+      src="{{ cover | relative_url }}"
+      alt="{{ page.album | default: page.title }}">
+
+  {% elsif page.youtube %}
+    <img
+      class="album-cover"
+      src="https://i.ytimg.com/vi/{{ page.youtube }}/hqdefault.jpg"
+      alt="{{ page.title }}">
+  {% endif %}
 
   <div class="album-info">
 
     {% if page.artist %}
-    <h2>{{ page.artist }}</h2>
+      <h2>{{ page.artist }}</h2>
     {% endif %}
 
     {% if page.album %}
-    <p>{{ page.album }}</p>
+      <p>{{ page.album }}</p>
     {% endif %}
 
     {% if page.rating %}
       {% assign full_stars = page.rating | floor %}
-      {% assign has_half = page.rating | modulo: 1 %}
+      {% assign decimal = page.rating | modulo: 1 %}
       {% assign empty_stars = 5 | minus: full_stars %}
 
       <div class="rating">
+
         {% for i in (1..full_stars) %}
           <i class="fa-solid fa-star"></i>
         {% endfor %}
 
-        {% if has_half > 0 %}
+        {% if decimal >= 0.5 %}
           <i class="fa-solid fa-star-half-stroke"></i>
           {% assign empty_stars = empty_stars | minus: 1 %}
         {% endif %}
@@ -34,6 +45,7 @@
         {% for i in (1..empty_stars) %}
           <i class="fa-regular fa-star"></i>
         {% endfor %}
+
       </div>
     {% endif %}
 

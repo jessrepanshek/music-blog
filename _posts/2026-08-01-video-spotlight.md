@@ -4,11 +4,11 @@ artist: Youth Code
 album: 
 year: 2025
 rating: 4.5
-album-cover: /assets/img/albums/Youth_Code-no_Consequence.jpg
-image:
-  path: /assets/img/albums/Youth_Code-no_Consequence.jpg
-show_post_image: false
-youtube-id: oqRh-tRkKu0
+
+youtube: oqRh-tRkKu0
+
+description: New brutal industrial.
+
 categories:
   - Song Spotlight
 tags:
@@ -16,3 +16,4 @@ tags:
   - electronic
 ---
 
+ /assets/img/albums/Youth_Code-no_Consequence.jpg

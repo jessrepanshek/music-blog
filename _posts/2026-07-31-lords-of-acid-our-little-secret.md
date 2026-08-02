@@ -5,10 +5,7 @@ date: 2026-07-31 20:00:00 -0700
 categories: [Albums]
 tags: [electronic, dance, industrial]
 
-album-cover: /assets/img/albums/Lords_of_Acid-Our_Little_Secret.jpg
-image:
-  path: /assets/img/albums/Lords_of_Acid-Our_Little_Secret.jpg
-show_post_image: false
+image: /assets/img/albums/Lords_of_Acid-Our_Little_Secret.jpg
 
 artist: "Lords of Acid"
 album: "Our Little Secret"
