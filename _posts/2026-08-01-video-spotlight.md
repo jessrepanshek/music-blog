@@ -1,5 +1,5 @@
 ---
-title: "Song Spotlight | No Consequence"
+title: "Youth Code - No Consequence"
 artist: Youth Code
 album: 
 year: 2025

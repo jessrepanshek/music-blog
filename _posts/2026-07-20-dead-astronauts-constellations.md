@@ -2,7 +2,7 @@
 title: "Dead Astronauts - Constellations"
 date: 2026-07-20 12:00:00 -0700
 
-categories: [Albums]
+categories: [Album Review]
 tags: [electronic, synthwave, darkwave]
 
 image: /assets/img/albums/Dead_Astronauts-Constellations.jpeg

@@ -2,7 +2,7 @@
 title: "Lords of Acid - Our Little Secret"
 date: 2026-07-31 20:00:00 -0700
 
-categories: [Albums]
+categories: [Album Review]
 tags: [electronic, dance, industrial]
 
 image: /assets/img/albums/Lords_of_Acid-Our_Little_Secret.jpg
