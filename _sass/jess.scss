@@ -161,6 +161,7 @@ a:hover {
 .profile-wrapper {
     text-align: center;
     width: 100%;
+    margin-bottom: 2%;
 }
 
 #avatar img {
@@ -173,14 +174,20 @@ a:hover {
 .site-title,
 .site-subtitle {
     text-align: center;
+    white-space: pre-line;
 }
 
 .site-title {
     color: var(--color-accent) !important;
+    font-size: 2rem;
 }
 
 .site-subtitle {
     color: var(--color-text-muted);
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    line-height: .8;
+    margin-top: 1%;
 }
 
 #post-list {
@@ -256,6 +263,14 @@ a:hover {
 .post-preview:hover {
   border-color: var(--color-border-hover);
   transform: translateY(-3px);
+}
+
+.fas {
+  font-size: 1rem;
+}
+
+.px-1 header {
+  margin-bottom: 2%;
 }
 
 .card-image-wrapper {
